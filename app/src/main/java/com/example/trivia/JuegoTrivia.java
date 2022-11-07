@@ -10,5 +10,7 @@ public class JuegoTrivia extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_juego_trivia);
+
+        final String getSelectedName = getIntent().getStringExtra("SelectedTopic");
     }
 }
