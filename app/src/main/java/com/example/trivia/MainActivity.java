@@ -34,7 +34,49 @@ public class MainActivity extends AppCompatActivity {
                 volley.setBackgroundResource(R.drawable.layout_futbol);
             }
         });
-        
+
+        basket.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                selectedTopicName ="basket";
+
+                basket.setBackgroundResource(R.drawable.layout_futbol);
+
+                futbol.setBackgroundResource(R.drawable.layout_futbol);
+                ciclismo.setBackgroundResource(R.drawable.layout_futbol);
+                volley.setBackgroundResource(R.drawable.layout_futbol);
+
+            }
+        });
+
+        ciclismo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                selectedTopicName ="ciclismo";
+
+                ciclismo.setBackgroundResource(R.drawable.layout_futbol);
+
+                basket.setBackgroundResource(R.drawable.layout_futbol);
+                futbol.setBackgroundResource(R.drawable.layout_futbol);
+                volley.setBackgroundResource(R.drawable.layout_futbol);
+            }
+        });
+
+        volley.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                selectedTopicName ="volley";
+
+                volley.setBackgroundResource(R.drawable.layout_futbol);
+
+                basket.setBackgroundResource(R.drawable.layout_futbol);
+                ciclismo.setBackgroundResource(R.drawable.layout_futbol);
+                futbol.setBackgroundResource(R.drawable.layout_futbol);
+            }
+        });
 
     }
 }
