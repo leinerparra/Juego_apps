@@ -44,4 +44,7 @@ public class ListaPreguntas {
     }
 
 
+    public void setSeleccionUsuario(String seleccionUsuario) {
+        this.seleccionUsuario = seleccionUsuario;
+    }
 }

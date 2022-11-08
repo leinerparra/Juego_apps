@@ -83,6 +83,10 @@ public class JuegoTrivia extends AppCompatActivity {
                     opcion1.setBackgroundResource(R.drawable.layout_error);
                     opcion1.setTextColor(Color.WHITE);
 
+                    RevelarRespuesta();
+
+                    questionLists.get(PosicionPreguntas).setSeleccionUsuario(SeleccionUsuario);
+
                 }
 
 
@@ -94,6 +98,19 @@ public class JuegoTrivia extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
+                if(SeleccionUsuario.isEmpty())
+                {
+                    SeleccionUsuario = opcion2.getText().toString();
+
+                    opcion2.setBackgroundResource(R.drawable.layout_error);
+                    opcion2.setTextColor(Color.WHITE);
+
+                    RevelarRespuesta();
+
+                    questionLists.get(PosicionPreguntas).setSeleccionUsuario(SeleccionUsuario);
+
+                }
+
             }
         });
 
@@ -101,12 +118,18 @@ public class JuegoTrivia extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-            }
-        });
+                if(SeleccionUsuario.isEmpty())
+                {
+                    SeleccionUsuario = opcion3.getText().toString();
 
-        siguienteBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
+                    opcion3.setBackgroundResource(R.drawable.layout_error);
+                    opcion3.setTextColor(Color.WHITE);
+
+                    RevelarRespuesta();
+
+                    questionLists.get(PosicionPreguntas).setSeleccionUsuario(SeleccionUsuario);
+
+                }
 
             }
         });
@@ -115,8 +138,39 @@ public class JuegoTrivia extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
+                if(SeleccionUsuario.isEmpty())
+                {
+                    SeleccionUsuario = opcion4.getText().toString();
+
+                    opcion4.setBackgroundResource(R.drawable.layout_error);
+                    opcion4.setTextColor(Color.WHITE);
+
+                    RevelarRespuesta();
+
+                    questionLists.get(PosicionPreguntas).setSeleccionUsuario(SeleccionUsuario);
+
+                }
+
             }
         });
+
+        siguienteBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                if(SeleccionUsuario.isEmpty())
+                {
+                    Toast.makeText(JuegoTrivia.this,"Seleccione una Respuesta",Toast.LENGTH_SHORT).show();
+                }
+                else
+                {
+
+                }
+
+            }
+        });
+
+
 
         backBTn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -132,6 +186,11 @@ public class JuegoTrivia extends AppCompatActivity {
 
 
 
+    }
+
+    private void CambiarPregunta()
+    {
+        ´PosicionPreguntas++;
     }
 
     private void startTimer(TextView timerTextView)
