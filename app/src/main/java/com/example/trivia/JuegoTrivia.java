@@ -29,7 +29,11 @@ public class JuegoTrivia extends AppCompatActivity {
     private int TiempoTotal =1;
     private int seconds =0;
 
-    private final List<ListaPreguntas> questionLists = new ArrayList<>();
+    private List<ListaPreguntas> questionLists = new ArrayList<>();
+
+    private int PosicionPreguntas =0;
+
+    private String SeleccionUsuario ="";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,11 +58,24 @@ public class JuegoTrivia extends AppCompatActivity {
 
         selectedTopicName.setText(getSelectedName);
 
+        questionLists = BancoPreguntas.getQuestions(getSelectedName);
+
         startTimer(timer);
+
+        questions.setText((PosicionPreguntas+1)+"/" + questionLists.size());
+
+        question.setText(questionLists.get(0).getPregunta());
+
+        opcion1.setText(questionLists.get(0).getOpcion1());
+        opcion2.setText(questionLists.get(0).getOpcion2());
+        opcion3.setText(questionLists.get(0).getOpcion3());
+        opcion4.setText(questionLists.get(0).getOpcion4());
 
         opcion1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+
 
             }
         });
@@ -147,12 +164,12 @@ public class JuegoTrivia extends AppCompatActivity {
                     @Override
                     public void run() {
 
-                        final String finalMinutos = String.valueOf(TiempoTotal);
-                        final String FinalSegundos = String.valueOf(seconds);
+                        String finalMinutos = String.valueOf(TiempoTotal);
+                        String FinalSegundos = String.valueOf(seconds);
 
                         if(finalMinutos.length() ==1)
                         {
-                            finalMinutos="0" + finalMinutos;
+                            finalMinutos = "0" + finalMinutos;
                         }
 
                         if(FinalSegundos.length() ==1)
