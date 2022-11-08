@@ -2,7 +2,7 @@ package com.example.trivia;
 
 public class ListaPreguntas {
 
-    private  String pregunta,opcion1,opcion2,opcion3,opcion4,respuesta;
+    private String pregunta,opcion1,opcion2,opcion3,opcion4,respuesta;
     private String seleccionUsuario;
 
     public ListaPreguntas(String pregunta, String opcion1, String opcion2, String opcion3, String opcion4, String respuesta, String seleccionUsuario) {
@@ -43,5 +43,5 @@ public class ListaPreguntas {
         return seleccionUsuario;
     }
 
-    
+
 }

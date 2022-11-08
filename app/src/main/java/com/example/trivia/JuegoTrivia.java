@@ -77,7 +77,7 @@ public class JuegoTrivia extends AppCompatActivity {
                     Toast.makeText(JuegoTrivia.this,"Tiempo FInal", Toast.LENGTH_SHORT).show();
 
                     Intent intento = new Intent(JuegoTrivia.this, Resultados.class);
-                    intento.putExtra("Correcto", );
+                    intento.putExtra("Correcto", getRespuestasCorrectas() );
 
                 }
             }
@@ -86,6 +86,21 @@ public class JuegoTrivia extends AppCompatActivity {
 
     private int getRespuestasCorrectas()
     {
+
+        int respuestasCorrectas =0;
+
+        for(int i = 0 ; i < questionLists.size();i++)
+        {
+            final String getSeleccionUsuario = questionLists.get(i).getSeleccionUsuario();
+            final String getRespuesta = questionLists.get(i).getRespuesta();
+
+            if(getSeleccionUsuario.equals(getRespuesta))
+            {
+                respuestasCorrectas++;
+            }
+
+        }
+        return respuestasCorrectas;
 
     }
 }
