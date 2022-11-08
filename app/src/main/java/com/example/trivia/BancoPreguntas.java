@@ -83,6 +83,32 @@ public class BancoPreguntas {
         return questionLists;
     }
 
+    //Preguntas Volley
+
+    private static List<ListaPreguntas> VolleyPreguntas()
+    {
+
+        final List<ListaPreguntas> questionLists = new ArrayList<>();
+
+        //Preguntas
+
+        final ListaPreguntas pregunta1 = new ListaPreguntas("¿CUANTO MIDE LA ZONA LIBRE? en metros", "1","3","2","4","3","");
+        final ListaPreguntas pregunta2 = new ListaPreguntas("¿CUANTO MIDE Minimamente EL ESPACIO LIBRE DE JUEGO? en metros", "4","5","7","6","7","");
+        final ListaPreguntas pregunta3 = new ListaPreguntas("¿CUANTO MIDE LA RED? (Ancho) en Metros", "2","3","1","0.5","1","");
+        final ListaPreguntas pregunta4 = new ListaPreguntas("¿CUANTO MIDEN LOS POSTES QUE SOSTIENEN LA RED? en metros", "3.05","2.55","2.45","2.60","2.55","");
+        final ListaPreguntas pregunta5 = new ListaPreguntas("¿CUAL ES LA CIRCUENFERENCIA DEL BALÓN? Cm", "59","62","64","65","65","");
+
+        //Preguntas añadir
+
+        questionLists.add(pregunta1);
+        questionLists.add(pregunta2);
+        questionLists.add(pregunta3);
+        questionLists.add(pregunta4);
+        questionLists.add(pregunta5);
+
+        return questionLists;
+    }
+
 
 }
 
