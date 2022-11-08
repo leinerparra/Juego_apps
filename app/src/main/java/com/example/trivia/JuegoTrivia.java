@@ -64,9 +64,7 @@ public class JuegoTrivia extends AppCompatActivity {
         startTimer(timer);
 
         questions.setText((PosicionPreguntas+1)+"/" + questionLists.size());
-
         question.setText(questionLists.get(0).getPregunta());
-
         opcion1.setText(questionLists.get(0).getOpcion1());
         opcion2.setText(questionLists.get(0).getOpcion2());
         opcion3.setText(questionLists.get(0).getOpcion3());
@@ -190,7 +188,47 @@ public class JuegoTrivia extends AppCompatActivity {
 
     private void CambiarPregunta()
     {
-        ´PosicionPreguntas++;
+        PosicionPreguntas++;
+        if((PosicionPreguntas+1)== questionLists.size())
+        {
+            siguienteBtn.setText("Acabar");
+        }
+
+        if(PosicionPreguntas < questionLists.size())
+        {
+            SeleccionUsuario ="";
+
+            opcion1.setBackgroundResource(R.drawable.layout_futbol);
+            opcion1.setTextColor(Color.parseColor("#1f6bb8"));
+
+            opcion2.setBackgroundResource(R.drawable.layout_futbol);
+            opcion2.setTextColor(Color.parseColor("#1f6bb8"));
+
+            opcion3.setBackgroundResource(R.drawable.layout_futbol);
+            opcion3.setTextColor(Color.parseColor("#1f6bb8"));
+
+            opcion4.setBackgroundResource(R.drawable.layout_futbol);
+            opcion4.setTextColor(Color.parseColor("#1f6bb8"));
+
+            questions.setText((PosicionPreguntas+1)+"/" + questionLists.size());
+            question.setText(questionLists.get(PosicionPreguntas).getPregunta());
+            opcion1.setText(questionLists.get(PosicionPreguntas).getOpcion1());
+            opcion2.setText(questionLists.get(PosicionPreguntas).getOpcion2());
+            opcion3.setText(questionLists.get(PosicionPreguntas).getOpcion3());
+            opcion4.setText(questionLists.get(PosicionPreguntas).getOpcion4());
+
+
+        }
+
+        else
+        {
+            Intent intento = new Intent(JuegoTrivia.this,Resultados.class);
+            intento.putExtra("Correcto",getRespuestasCorrectas());
+            intento.putExtra("Incorrecto",getRespuestasInCorrectas());
+            startActivity(intento);
+
+            finish();
+        }
     }
 
     private void startTimer(TextView timerTextView)
