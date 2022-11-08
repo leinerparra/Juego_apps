@@ -109,6 +109,24 @@ public class BancoPreguntas {
         return questionLists;
     }
 
+    public static List<ListaPreguntas> getQuestions(String SelectTopicName)
+    {
+        switch (SelectTopicName)
+        {
+            case "futbol":
+                return futbolPreguntas();
+
+            case "basket":
+                return basketPreguntas();
+
+            case "ciclismo":
+                return ciclcismoPreguntas();
+
+            case "volley":
+                return VolleyPreguntas();
+        }
+    }
+
 
 }
 
