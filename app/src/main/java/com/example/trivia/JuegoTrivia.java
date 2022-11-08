@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatButton;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
@@ -74,6 +75,15 @@ public class JuegoTrivia extends AppCompatActivity {
         opcion1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+                if(SeleccionUsuario.isEmpty())
+                {
+                    SeleccionUsuario = opcion1.getText().toString();
+
+                    opcion1.setBackgroundResource(R.drawable.layout_error);
+                    opcion1.setTextColor(Color.WHITE);
+
+                }
 
 
 
@@ -233,5 +243,34 @@ public class JuegoTrivia extends AppCompatActivity {
 
         startActivity(new Intent(JuegoTrivia.this, MainActivity.class));
         finish();
+    }
+
+    private void RevelarRespuesta()
+    {
+        final String getAnswer = questionLists.get(PosicionPreguntas).getRespuesta();
+
+        if(opcion1.getText().toString().equals(getAnswer))
+        {
+            opcion1.setBackgroundResource(R.drawable.layout_background_button);
+            opcion1.setTextColor(Color.WHITE);
+        }
+
+        else if(opcion2.getText().toString().equals(getAnswer))
+        {
+            opcion2.setBackgroundResource(R.drawable.layout_background_button);
+            opcion2.setTextColor(Color.WHITE);
+        }
+
+        else if(opcion3.getText().toString().equals(getAnswer))
+        {
+            opcion3.setBackgroundResource(R.drawable.layout_background_button);
+            opcion3.setTextColor(Color.WHITE);
+        }
+
+        else if(opcion4.getText().toString().equals(getAnswer))
+        {
+            opcion4.setBackgroundResource(R.drawable.layout_background_button);
+            opcion4.setTextColor(Color.WHITE);
+        }
     }
 }
