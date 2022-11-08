@@ -52,6 +52,8 @@ public class JuegoTrivia extends AppCompatActivity {
 
         selectedTopicName.setText(getSelectedName);
 
+        startTimer(timer);
+
 
 
     }
@@ -78,15 +80,47 @@ public class JuegoTrivia extends AppCompatActivity {
 
                     Intent intento = new Intent(JuegoTrivia.this, Resultados.class);
                     intento.putExtra("Correcto", getRespuestasCorrectas() );
+                    intento.putExtra("Incorrecto",getRespuestasInCorrectas());
+
+                    startActivity(intento);
+
+                    finish();
+
 
                 }
+
+                else
+                {
+                    seconds--;
+                }
+
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+
+                        final String finalMinutos = String.valueOf(TiempoTotal);
+                        final String FinalSegundos = String.valueOf(seconds);
+
+                        if(finalMinutos.length() ==1)
+                        {
+                            finalMinutos="0" + finalMinutos;
+                        }
+
+                        if(FinalSegundos.length() ==1)
+                        {
+                            FinalSegundos = "0" + FinalSegundos;
+                        }
+
+                        timerTextView.setText(finalMinutos + ":" + FinalSegundos);
+                    }
+                });
             }
         }, 1000,1000);
     }
 
+    //Respuestas Correctas
     private int getRespuestasCorrectas()
     {
-
         int respuestasCorrectas =0;
 
         for(int i = 0 ; i < questionLists.size();i++)
@@ -101,6 +135,27 @@ public class JuegoTrivia extends AppCompatActivity {
 
         }
         return respuestasCorrectas;
+
+    }
+    //Respuestas Incorrectas
+
+    private int getRespuestasInCorrectas()
+    {
+
+        int respuestasInCorrectas =0;
+
+        for(int i = 0 ; i < questionLists.size();i++)
+        {
+            final String getSeleccionUsuario = questionLists.get(i).getSeleccionUsuario();
+            final String getRespuesta = questionLists.get(i).getRespuesta();
+
+            if(!getSeleccionUsuario.equals(getRespuesta))
+            {
+                respuestasInCorrectas++;
+            }
+
+        }
+        return respuestasInCorrectas;
 
     }
 }
