@@ -11,40 +11,45 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
-    private String selectedTopicName ="";
+    private String selectedTopicName = "";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        final LinearLayout futbol = findViewById(R.id.futbol);
-        final LinearLayout basket = findViewById(R.id.basket);
-        final LinearLayout ciclismo = findViewById(R.id.ciclismo);
-        final LinearLayout volley = findViewById(R.id.Volley);
+        final LinearLayout futbol = findViewById( R.id.futbollayout);
+        final LinearLayout basket = findViewById(R.id.basketlayout);
+        final LinearLayout ciclismo = findViewById(R.id.Ciclismolayout);
+        final LinearLayout volley = findViewById(R.id.volleylayout);
 
-        final Button StartButton = findViewById(R.id.start);
+        final Button startButton = findViewById(R.id.start);
+
 
         futbol.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
+            public void onClick(View v) {
 
-                selectedTopicName ="futbol";
+                selectedTopicName = "futbol";
 
-                futbol.setBackgroundResource(R.drawable.layout_futbol);
+                futbol.setBackgroundResource(R.drawable.layout_error);
 
                 basket.setBackgroundResource(R.drawable.layout_futbol);
                 ciclismo.setBackgroundResource(R.drawable.layout_futbol);
                 volley.setBackgroundResource(R.drawable.layout_futbol);
+
+
+
             }
         });
 
+
         basket.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
+            public void onClick(View v) {
 
-                selectedTopicName ="basket";
+                selectedTopicName = "basket";
 
-                basket.setBackgroundResource(R.drawable.layout_futbol);
+                basket.setBackgroundResource(R.drawable.layout_error);
 
                 futbol.setBackgroundResource(R.drawable.layout_futbol);
                 ciclismo.setBackgroundResource(R.drawable.layout_futbol);
@@ -55,11 +60,11 @@ public class MainActivity extends AppCompatActivity {
 
         ciclismo.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
+            public void onClick(View v) {
 
-                selectedTopicName ="ciclismo";
+                selectedTopicName = "ciclismo";
 
-                ciclismo.setBackgroundResource(R.drawable.layout_futbol);
+                ciclismo.setBackgroundResource(R.drawable.layout_error);
 
                 basket.setBackgroundResource(R.drawable.layout_futbol);
                 futbol.setBackgroundResource(R.drawable.layout_futbol);
@@ -69,11 +74,11 @@ public class MainActivity extends AppCompatActivity {
 
         volley.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
+            public void onClick(View v) {
 
-                selectedTopicName ="volley";
+                selectedTopicName = "volley";
 
-                volley.setBackgroundResource(R.drawable.layout_futbol);
+                volley.setBackgroundResource(R.drawable.layout_error);
 
                 basket.setBackgroundResource(R.drawable.layout_futbol);
                 ciclismo.setBackgroundResource(R.drawable.layout_futbol);
@@ -82,9 +87,9 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
-        StartButton.setOnClickListener(new View.OnClickListener() {
+        startButton.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
+            public void onClick(View v) {
 
                 if(selectedTopicName.isEmpty())
                 {

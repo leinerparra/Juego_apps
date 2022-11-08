@@ -18,19 +18,18 @@
         android:layout_marginEnd="80dp"
         android:layout_marginBottom="10dp"
         android:adjustViewBounds="true"
-        android:src="@drawable/logo" />
-
+        android:src="@drawable/logo"
+        />
     <TextView
         android:id="@+id/elegirtema"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/Iconoquiz"
         android:layout_marginStart="30dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="28dp"
         android:layout_marginEnd="20dp"
         android:text="Selecciona El tema"
-        android:textColor="@color/white"
-        />
+        android:textColor="@color/white" />
 
     <LinearLayout
         android:id="@+id/layout1"
@@ -43,12 +42,8 @@
         android:layout_marginEnd="20dp"
         android:weightSum="2">
 
-
-        <!-- Futbol Sesion -->
-
-
     <LinearLayout
-        android:id="@+id/futbol"
+        android:id="@+id/futbollayout"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="1"
@@ -70,16 +65,16 @@
             android:text="Futbol"
             android:textColor="@color/black"
             android:textSize="18sp"
-            android:textStyle="bold">
-
-        </TextView>
+            android:textStyle="bold"/>
 
     </LinearLayout>
-        <!-- Basketball Seccion-->
 
+        <!-- Layput 1 Fin-->
+
+        <!-- Inicio 2 -->
 
         <LinearLayout
-            android:id="@+id/basket"
+            android:id="@+id/basketlayout"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -98,21 +93,15 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:text="BasketBall"
+                android:text="Basket"
                 android:textColor="@color/black"
                 android:textSize="18sp"
-                android:textStyle="bold">
-
-            </TextView>
+                android:textStyle="bold"/>
 
         </LinearLayout>
-
-
     </LinearLayout>
 
-    <!-- Inicio segunda ronda de layout-->
-
-
+    <!-- Otro layout2 -->
 
     <LinearLayout
         android:id="@+id/layout2"
@@ -125,11 +114,8 @@
         android:layout_marginEnd="20dp"
         android:weightSum="2">
 
-        <!-- Volley Sesion -->
-
-
         <LinearLayout
-            android:id="@+id/Volley"
+            android:id="@+id/volleylayout"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -151,16 +137,16 @@
                 android:text="VolleyBall"
                 android:textColor="@color/black"
                 android:textSize="18sp"
-                android:textStyle="bold">
-
-            </TextView>
+                android:textStyle="bold"/>
 
         </LinearLayout>
-        <!-- Ciclismo Seccion-->
 
+        <!-- Layput 2.1Fin-->
+
+        <!-- Inicio 2.2 -->
 
         <LinearLayout
-            android:id="@+id/ciclismo"
+            android:id="@+id/Ciclismolayout"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -182,16 +168,10 @@
                 android:text="Ciclismo"
                 android:textColor="@color/black"
                 android:textSize="18sp"
-                android:textStyle="bold">
-
-            </TextView>
+                android:textStyle="bold"/>
 
         </LinearLayout>
-
-
     </LinearLayout>
-
-    <!-- Fin layout -->
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/start"
@@ -208,5 +188,5 @@
         android:background="@drawable/layout_background_button"/>
 
 
-
 </RelativeLayout>
+

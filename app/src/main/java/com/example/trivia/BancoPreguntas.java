@@ -1,5 +1,7 @@
 package com.example.trivia;
 
+import androidx.annotation.NonNull;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -7,7 +9,7 @@ public class BancoPreguntas {
 
     //Futbol
 
-    private static List<ListaPreguntas> futbolPreguntas()
+    public static List<ListaPreguntas> futbolPreguntas()
     {
 
         final List<ListaPreguntas> questionLists = new ArrayList<>();
@@ -33,7 +35,7 @@ public class BancoPreguntas {
 
     //Basket
 
-    private static List<ListaPreguntas> basketPreguntas()
+    public static List<ListaPreguntas> basketPreguntas()
     {
 
         final List<ListaPreguntas> questionLists = new ArrayList<>();
@@ -59,7 +61,7 @@ public class BancoPreguntas {
 
     //Ciclismo
 
-    private static List<ListaPreguntas> ciclcismoPreguntas()
+    public static List<ListaPreguntas> ciclcismoPreguntas()
     {
 
         final List<ListaPreguntas> questionLists = new ArrayList<>();
@@ -85,7 +87,7 @@ public class BancoPreguntas {
 
     //Preguntas Volley
 
-    private static List<ListaPreguntas> VolleyPreguntas()
+    public static List<ListaPreguntas> VolleyPreguntas()
     {
 
         final List<ListaPreguntas> questionLists = new ArrayList<>();
@@ -109,19 +111,16 @@ public class BancoPreguntas {
         return questionLists;
     }
 
-    public static List<ListaPreguntas> getQuestions(String SelectTopicName)
+    public static List<ListaPreguntas> getQuestions(@NonNull String SelectTopicName)
     {
         switch (SelectTopicName)
         {
             case "futbol":
                 return futbolPreguntas();
-
             case "basket":
                 return basketPreguntas();
-
             case "ciclismo":
                 return ciclcismoPreguntas();
-
             default:
                 return VolleyPreguntas();
         }

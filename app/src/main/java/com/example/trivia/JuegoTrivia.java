@@ -30,7 +30,7 @@ public class JuegoTrivia extends AppCompatActivity {
     private int TiempoTotal =1;
     private int seconds =0;
 
-    private List<ListaPreguntas> questionLists = new ArrayList<>();
+    private List<ListaPreguntas> questionLists;
 
     private int PosicionPreguntas =0;
 
@@ -55,7 +55,7 @@ public class JuegoTrivia extends AppCompatActivity {
 
         siguienteBtn = findViewById(R.id.SiguienteBTN);
 
-        final String getSelectedName = getIntent().getStringExtra("SelectedTopic");
+        final String getSelectedName = getIntent().getStringExtra("Tema Seleccionado");
 
         selectedTopicName.setText(getSelectedName);
 
@@ -162,6 +162,7 @@ public class JuegoTrivia extends AppCompatActivity {
                 }
                 else
                 {
+                    CambiarPregunta();
 
                 }
 
