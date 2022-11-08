@@ -57,6 +57,32 @@ public class BancoPreguntas {
         return questionLists;
     }
 
+    //Ciclismo
+
+    private static List<ListaPreguntas> ciclcismoPreguntas()
+    {
+
+        final List<ListaPreguntas> questionLists = new ArrayList<>();
+
+        //Preguntas
+
+        final ListaPreguntas pregunta1 = new ListaPreguntas("¿Desde cuándo se disputa el Tour de Francia?", "1903","1899","1910","1902","1903","");
+        final ListaPreguntas pregunta2 = new ListaPreguntas("¿En qué fecha se corre el Tour? de Francia", "Julio","Agosto","Junio","Mayo","Junio","");
+        final ListaPreguntas pregunta3 = new ListaPreguntas("¿Cuantos equipos Compiten?", "10","18","20","22","22","");
+        final ListaPreguntas pregunta4 = new ListaPreguntas("¿Cuáles son el maximo de etapas que se disputan?", "18","21","22","19","21","");
+        final ListaPreguntas pregunta5 = new ListaPreguntas("¿Que significa la camisa rosada", "Lider","Manager","Ultimo","Peaton","Lider","");
+
+        //Preguntas añadir
+
+        questionLists.add(pregunta1);
+        questionLists.add(pregunta2);
+        questionLists.add(pregunta3);
+        questionLists.add(pregunta4);
+        questionLists.add(pregunta5);
+
+        return questionLists;
+    }
+
 
 }
 
