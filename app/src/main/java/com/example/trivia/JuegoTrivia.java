@@ -5,12 +5,14 @@ import androidx.appcompat.widget.AppCompatButton;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import org.w3c.dom.Text;
 
+import java.security.cert.PKIXRevocationChecker;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Timer;
@@ -53,6 +55,53 @@ public class JuegoTrivia extends AppCompatActivity {
         selectedTopicName.setText(getSelectedName);
 
         startTimer(timer);
+
+        opcion1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
+
+        opcion2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
+
+        opcion3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
+
+        siguienteBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
+
+        opcion4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
+
+        backBTn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                TiempoTrivia.purge();
+                TiempoTrivia.cancel();
+
+                startActivity(new Intent(JuegoTrivia.this, MainActivity.class));
+                finish();
+            }
+        });
 
 
 
@@ -157,5 +206,15 @@ public class JuegoTrivia extends AppCompatActivity {
         }
         return respuestasInCorrectas;
 
+    }
+
+    @Override
+    public void onBackPressed() {
+
+        TiempoTrivia.purge();
+        TiempoTrivia.cancel();
+
+        startActivity(new Intent(JuegoTrivia.this, MainActivity.class));
+        finish();
     }
 }
